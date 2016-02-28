@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+<title>Weekend Challenge #1</title>
+
+<!-- styles -->
+<link rel ="stylesheet" href = "stylesheet.css" />
+
+<!-- scripts -->
+<script type = "text/javascript" src = "jquery.min.js"></script>
+<script type = "text/javascript" src = "app.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+  <div class = "employees">
+
+
+
+  <form id="empForm">
+    <fieldset class = "empFields">
+
+      <legend>
+        Employee Data
+      </legend>
+
+
+
+    <label for = "empFirstName" >First name:</label>
+    <input type = "text" id = "empFirstName" name = "empFirstName" placeholder="First Name"/>
+
+    <!-- todo replace <br /> tags with css style-->
+
+
+    <p>
+    <label for = "empLastName" >Last name:</label>
+    <input type = "text" id = "empLastName" name = "empLastName" placeholder = "Last Name"/>
+    </p>
+    <p>
+    <label for = "empIDnumber">ID:</label>
+    <input type = "text" id = "empIdNumber" name = "empIdNumber" placeholder = "ID Number"/>
+    </p>
+    <p>
+    <label for = "empTitle">Title:</label>
+    <input type = "text" id = "empTitle" name = "empTitle" placeholder = "Title"/>
+    </p>
+    <p>
+    <label for = "empAnnualSalary">Annual salary:</label>
+    <input type = "text" id = "empAnnualSalary" name = "empAnnualSalary" placeholder = "Salary"/>
+    </p>
+
+    </fieldset>
+
+    <input type = "submit" class = "submit" value = "Submit Employee" />
+
+
+  </form>
+
+
+
+    </div>
+
+
+    <div class = "salary">
+
+    <p class = "showSal">
+       Total Monthly Salary:
+    </p>
+    <p class="showSal" id = "showSal">
+      $0
+    </p>
+
+  </div>
+
+
+
+
+  <div class = "empContainer">
+
+
+
+  </div>
+
+
+
+</body>
+</html>
