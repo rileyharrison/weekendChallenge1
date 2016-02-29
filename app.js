@@ -37,9 +37,6 @@ $(document).ready(function(){
     console.log("values = " + values);
 
 
-    //if we have an empIndex, update rather than push
-    
-
     //if data was entered, push object to array
     if (empData){
       empArray.push(values);
@@ -72,35 +69,6 @@ function delEmp(){
 
   // remove the object from the array by index
   empArray.splice(delIndex,1);
-
-
-  // display updated employees
-  listEmployees();
-
-};
-
-function editEmp(){
-
-  console.log("in edit emp");
-
-  // fetch index from data attribute of parent of button, which should be the employee div
-
-  var editIndex = $(this).parent().data("myIndex");
-  var empRow = empArray[editIndex];
-  //put each of the object values into the form
-  console.log('trying to set' +empRow.empFirstName);
-  $('#empIndex').data("empIndex",editIndex);
-
-  $('#empFirstName').val(empRow.empFirstName);
-  $('#empLastName').val(empRow.empLastName);
-  $('#empIdNumber').val(empRow.empIdNumber);
-  $('#empTitle').val(empRow.empTitle);
-  $('#empAnnualSalary').val(empRow.empAnnualSalary);
-
-//  console.log("del index"+ delIndex);
-
-  // remove the object from the array by index
-  //empArray.splice(delIndex,1);
 
 
   // display updated employees
@@ -165,8 +133,6 @@ function listEmployees(){
      $el.append('<p>' + "Annual Salary:  " + formatCash(annualSalary) + '</p>');
 
      $el.append('<input class = "delEmp" val = "' + i + '" type = "submit"  value = "Delete" id="empDel' + i +'">');
-     $el.append('<input class = "editEmp" val = "' + i + '" type = "submit"  value = "Edit" id=empEdit' + i +'">');
-
   }
 
   //loop done
@@ -187,7 +153,6 @@ function listEmployees(){
   //  set onclick for delete buttons after created
 
   $( ".delEmp" ).on( "click", delEmp);
-  $( ".editEmp" ).on( "click", editEmp);
 
 };
 
@@ -198,7 +163,7 @@ function formatCash(numCash){
       numCash = numCash.substring(0, len-3)+ "," + numCash.substring(len-3,len);
     }
     len = numCash.length;
-
+    
     if (len>8){
       numCash = numCash.substring(0, len-7)+ "," + numCash.substring(len-7,len);
     }
